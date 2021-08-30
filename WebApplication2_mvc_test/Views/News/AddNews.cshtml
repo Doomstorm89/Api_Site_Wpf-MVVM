@@ -1,0 +1,22 @@
+﻿@using WebApplication2_mvc_test.Entitys
+@{
+    Layout = null;
+}
+<html>
+<head>
+
+</head>
+<body>
+<form action="~/News/AddNews" method="post">
+    <p>Введите заголовок новости:</p>
+    @Html.TextBox( "Heading", "" )
+    <p>Путь до картинки:</p>
+    <input type="button" action="/" value="Выбрать картинку"/>
+    <p>Введите текст новости:</p>
+    @Html.TextArea( "NewsText", "some text" );
+    <p>Выберите тип новости:</p>
+    @Html.DropDownList( "Type", new SelectList( new string[] {News.NewsType.Society.ToString(), News.NewsType.Economics.ToString(), News.NewsType.Worlds.ToString(), News.NewsType.Sports.ToString(), News.NewsType.Sciences.ToString(), News.NewsType.Tourism.ToString(), News.NewsType.Accidents.ToString(), News.NewsType.Politics.ToString()} ), "" )
+    <input type="submit" name="submit" value="Добавить"/>
+</form>
+</body>
+</html>

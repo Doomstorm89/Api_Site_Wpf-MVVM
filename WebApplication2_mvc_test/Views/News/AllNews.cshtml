@@ -1,0 +1,14 @@
+﻿@using WebApplication2_mvc_test.Models;
+@model NewsModel;
+@{
+    ViewData[ "Title" ] = "AllNewsView";
+}
+
+@foreach( var news in Model.GetNews ) {
+    <div>
+        <h3>@news.Heading</h3>
+        <img src="@news.ImagePath">
+        <p>@news.NewsText</p>
+        <i>@news.Type</i>
+    </div>
+}
